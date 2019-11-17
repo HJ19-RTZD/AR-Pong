@@ -35,6 +35,6 @@ public class CustomNetworkManager : NetworkManager {
     {
         // call base functionality (actually destroys the player)
         base.OnStopServer();
-        SceneManager.LoadScene("ServerScene");
+        //SceneManager.LoadScene("ServerScene");
     }
 }
