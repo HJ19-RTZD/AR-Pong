@@ -16,8 +16,10 @@ public class Ball : NetworkBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = isClient;
-        if (isServer)
-            rb.AddForce(new Vector3(400, 0, Random.Range(50,100)));
+        if (isServer) {
+            Vector3 force = new Vector3(Random.Range(-100, 100), 0, Random.Range(-100,100));
+            rb.AddForce(force.normalized * 400);
+        }
         boxes = FindObjectsOfType<RespawnBoxes>();
     }
  
